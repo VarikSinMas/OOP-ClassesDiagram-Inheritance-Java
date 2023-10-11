@@ -1,0 +1,19 @@
+# OOP-ClassesDiagram-Inheritance-Java
+Programación Orientada a Objetos (Java IntelliJ)
+
+ACTIVIDAD:
+
+Una empresa se dedica al alquiler de vehículos y quiere gestionar los contratos de alquiler y ha realizado un diagrama de clases que describe la estructura del sistema.
+La empresa dispone de tres tipos de vehículos, coches, motos y camiones, de todos ellos se desea almacenar la matricula, la marca y el modelo del vehículo. Estos tres datos son comunes indistintamente del tipo de vehículo. Cada uno de los tres tipos de vehículos tiene datos específicos en función del tipo de vehículo que se trate, así pues, de los vehículos además de los tres datos comunes para todos los vehículos desearemos conocer cuantas puertas tiene el vehículo y cuantas plazas de personas conductor incluido pueden viajar en el vehículo, en cambio de las motocicletas deseamos conocer la cilindrada (cc) y de los camiones la capacidad de la carga, ésta siempre en quilogramos.
+La clase Vehículo se ha definido como clase abstracta, en el diagrama de clases se define con el nombre de la clase en cursiva, una clase abstracta es una clase de la cual no se pueden definir instancias y por lo tanto crear objetos. Esto es debido a que debemos crear objetos de algún tipo de vehículo, así pues, se deberán crear instancias de sus clases heredadas Coche, Moto y Camión.
+Para poder alquilar un vehículo deberemos almacenar los datos de los clientes, de los cuales deseamos conocer el nif y el nombre.
+Por otro lado, debemos crear un contrato, el cual contendrá la fecha de inicio y final del alquiler y el precio del día, cada contrato solo contendrá un solo vehículo y cliente. Como se puede observar en el diagrama de clases, la clase contrato tiene dos métodos, el método nDias() debe devolver el número de días del alquiler, este valor se obtendrá calculando la diferencia entre los atributos de fecha de inicio y final del contrato, el método costeTotal() devuelve el importe del coste total del alquiler, este coste es el resultado de calcular el valor que devuelve el método nDias() multiplicado por el atributo precioDia
+La relación binaria entre Vehículo y ContratoAlquiler tiene una cardinalidad de 1…*. Esta cardinalidad, nos indica que un vehículo puede constar en varios contratos de alquiler, pero un contrato de alquiler solo puede tener un solo vehículo, esta misma circunstancia ocurre en la relación entre Cliente y ContratoAlquiler, es decir un contrato solo puede ser para un solo cliente, pero un cliente puede alquilar en diversas ocasiones algún vehículo.
+Al realizar una relación binaria, por ejemplo, entre Vehículo y ContratoAlquiler hay que indicar cuál de las dos clases usa la otra, además debemos tener en cuenta que, al codificar el diagrama de clases a Java, una de las clases será atributo de la otra. En este caso hemos dibujado el símbolo de una flecha al lado de la clase Vehículo, esto nos indica que al codificar en Java en la clase ContratoAlquiler, además de los atributos fechaInicio, fechaFin y precioDia se debe añadir un atributo de tipo Vehículo, y siguiendo el diagrama también añadiremos un atributo de tipo Cliente al codificar en Java la clase ContratoAlquiler.
+
+1. Codifica en Java el diagrama de clases. Se debe definir y añadir en Java las clases, atributos, constructores, getters y setters, toString y en la clase ContratoAlquiler, además se deben codificar e implementar los métodos nDias() y costeTotal().
+2. En el método inicio() de la clase AlquilerVehiculos.java codifica en Java las acciones siguientes:
+3. Crea un objeto de cada una de las clases Coche, Moto y Camión.
+4. Crea dos objetos de tipo cliente.
+5. Crea tres contratos de alquiler, uno para cada tipo de vehículo, dos de los contratos tendrán el mismo cliente.
+6. Utilizando los métodos toString, muestra por pantalla los datos de todos los objetos que has creado.
